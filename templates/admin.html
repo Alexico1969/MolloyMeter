@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin - Set Question</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Admin Panel - Define Question & choices</h1>
+    
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <form action="{{ url_for('admin') }}" method="post">
+
+        <h4>Put in the question you want to ask and a maximum of 10 possible answers</h4>
+        <h5>(All answers left empty will be ignored)</h5>
+
+        <label for="question">Question:</label><br>
+        <input type="text" id="question" name="question" required><br><br>
+
+        <hr>
+        <br>
+
+        <label for="choice1">Choice 1:</label><br>
+        <input type="text" id="choice1" name="choice1" required><br><br>
+
+        <label for="choice2">Choice 2:</label><br>
+        <input type="text" id="choice2" name="choice2" ><br><br>
+
+        <label for="choice3">Choice 3:</label><br>
+        <input type="text" id="choice3" name="choice3"><br><br>
+
+        <label for="choice4">Choice 4:</label><br>
+        <input type="text" id="choice4" name="choice4"><br><br>
+
+        <label for="choice5">Choice 5:</label><br>
+        <input type="text" id="choice5" name="choice5" ><br><br>
+
+        <label for="choice6">Choice 6:</label><br>
+        <input type="text" id="choice6" name="choice6" ><br><br>
+
+        <label for="choice7">Choice 7:</label><br>
+        <input type="text" id="choice7" name="choice7"><br><br>
+
+        <label for="choice8">Choice 8:</label><br>
+        <input type="text" id="choice8" name="choice8"><br><br>
+
+        <label for="choice9">Choice 9:</label><br>
+        <input type="text" id="choice9" name="choice9"><br><br>
+
+        <label for="choice10">Choice 10:</label><br>
+        <input type="text" id="choice10" name="choice10"><br><br>
+
+
+        <button type="submit">Save Question & answers</button>
+    </form>
+    
+    {% if question %}
+    <h2>Current Question:</h2>
+    <p>{{ question.question_text }}</p>
+    <ul>
+        {% for choice in question.choices %}
+            <li>{{ choice }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>

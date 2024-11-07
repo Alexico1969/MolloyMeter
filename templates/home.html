@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Current Voting Results</h1>
+
+    <!-- Display the plot image -->
+    <img src="data:image/png;base64,{{ img_base64 }}" alt="Voting Results">
+
+</body>
+</html>

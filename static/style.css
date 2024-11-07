@@ -1,0 +1,85 @@
+/* General page styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;  /* Light background */
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #0068a8;  /* Dark blue */
+    text-align: center;
+}
+
+form {
+    background-color: #ffffff;  /* White form background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+label {
+    font-weight: bold;
+    color: #0068a8;  /* Dark blue */
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"], button {
+    width: 96%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+input[type="text"] {
+    background-color: #f9f9f9;  /* Light input background */
+}
+
+button {
+    background-color: #0068a8;  /* Dark blue */
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #18b8ec;  /* Light blue on hover */
+}
+
+/* Styling for current question display */
+h2 {
+    color: #0068a8;  /* Dark blue */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: #18b8ec;  /* Light blue */
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+ul li:last-child {
+    margin-bottom: 0;
+}
+
+/* Flash messages styling */
+ul li.flash-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #f5c6cb;
+}
