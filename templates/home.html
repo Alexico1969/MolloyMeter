@@ -9,8 +9,28 @@
 <body>
     <h1>Current Voting Results</h1>
 
-    <!-- Display the plot image -->
-    <img src="data:image/png;base64,{{ img_base64 }}" alt="Voting Results">
+    <!-- Container for the two side-by-side sections -->
+    <div class="container">
+        <!-- Left section for the graph -->
+        <div class="graph-section">
+            <img src="data:image/png;base64,{{ img_base64 }}" alt="Voting Results">
+        </div>
 
+        <!-- Right section for buttons and additional content -->
+        <div class="content-section">
+            <form action="{{ url_for('home') }}" method="POST">
+                <button type="submit" name="action" value="reload">Reload Page</button>
+                <br>
+                <button type="submit" name="action" value="reset">Reset Votes</button>
+                <!-- Add more buttons here as needed -->
+            </form>
+            <h2 class="center_info">Scan QR code to vote:</h2>
+            <br>
+            <div class="center_info">
+                <img height="200px" src="{{ url_for('static', filename='QR_code.png') }}" alt="QR Code" />
+            </div>
+        </div>
+    </div>
 </body>
 </html>
+

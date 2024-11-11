@@ -83,3 +83,31 @@ ul li.flash-message {
     border-radius: 5px;
     border: 1px solid #f5c6cb;
 }
+
+/* Container for the two sections */
+.container {
+    display: flex;
+    gap: 20px; /* Space between the sections */
+    padding: 20px;
+}
+
+/* Left section for the graph */
+.graph-section {
+    flex: 2; /* Takes up 2/3 of the width */
+}
+
+/* Right section for buttons and other content */
+.content-section {
+    flex: 1; /* Takes up 1/3 of the width */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Align buttons to the left */
+    padding: 10px;
+    background-color: #f9f9f9; /* Light background for contrast */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+    border-radius: 8px; /* Rounded corners */
+}
+
+.center_info{
+    text-align: center;
+}

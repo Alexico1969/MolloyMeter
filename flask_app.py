@@ -28,7 +28,7 @@ choices = ["","","","","","","","","",""]
 votes = [1,2,3,4,5,6,7,8,9,40]
 
 
-@app.route('/')
+@app.route('/', methods=['GET','POST'])
 def home():
     question, choices = get_question()
     
@@ -47,6 +47,7 @@ def home():
     ax.barh(filtered_choices, filtered_votes, color='#18b8ec')
     ax.set_xlabel("VOTES")
     ax.set_title(question)
+    plt.subplots_adjust(left=0.5)
 
     # Save the plot to a BytesIO object and encode it as base64
     buffer = io.BytesIO()
@@ -58,14 +59,19 @@ def home():
     return render_template("home.html", img_base64=img_base64)
 
 
-@app.route('/vote', methods=['POST'])
+@app.route('/vote', methods=['GET','POST'])
 def vote():
-    if 'has_voted' in session:
-        return "You've already voted!"
-    else:
-        # Save the vote (e.g., in a database or file)
-        session['has_voted'] = True
-        return "Thank you for voting!"
+
+    if request.method == 'POST':
+        pass
+        if 'has_voted' in session:
+            return "You've already voted!"
+        else:
+            # Save the vote (e.g., in a database or file)
+            session['has_voted'] = True
+            return "Thank you for voting!"
+    
+    
 
 
 @app.route('/admin', methods=['GET', 'POST'])
